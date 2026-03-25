@@ -1,12 +1,34 @@
 # Neovim Configuration
 
-Config location: `~/.config/nvim/`
+This repo contains the full Neovim config. Clone it directly into `~/.config/nvim/` to get the exact same setup on any machine.
+
+## Installation
+
+**1. Install prerequisites (macOS)**
+```sh
+brew install neovim ripgrep git
+brew install --cask font-jetbrains-mono-nerd-font
+```
+
+**2. Clone this repo as your Neovim config**
+```sh
+git clone git@github.com:reza-rahman-rx/my-vim-setup.git ~/.config/nvim
+```
+
+**3. Open Neovim — plugins install automatically**
+```sh
+nvim
+```
+Run `:Lazy sync` if any plugins didn't install, then `:Mason` to install LSP servers (`ts_ls`, `lua_ls`, `pyright`).
+
+---
 
 ## File Structure
 
 ```
-~/.config/nvim/
-  init.lua              -- Entry point: sources .vimrc, bootstraps lazy.nvim, loads modules
+~/.config/nvim/   (this repo)
+  init.lua                  -- Entry point: bootstraps lazy.nvim, loads modules
+  lazy-lock.json            -- Pinned plugin versions (reproducible installs)
   lua/
     base.lua            -- Core editor settings (indentation, search, encoding, etc.)
     plugins/
