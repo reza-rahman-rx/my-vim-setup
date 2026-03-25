@@ -101,6 +101,7 @@ return {
         filters = { dotfiles = false, git_ignored = false },
       })
       vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true, desc = 'Toggle file explorer' })
+      vim.keymap.set('n', '<leader>E', ':NvimTreeFocus<CR>', { silent = true, desc = 'Focus file explorer' })
     end,
   },
 
@@ -349,6 +350,9 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
     ft = { 'markdown' },
     opts = {},
+    keys = {
+      { '<leader>mp', ':RenderMarkdown toggle<CR>', desc = 'Toggle markdown preview' },
+    },
   },
 
   -- ============================================================
