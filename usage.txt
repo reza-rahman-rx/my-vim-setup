@@ -1,0 +1,21 @@
+⏺ Based on your config, you have two ways to browse files:
+
+  1. NvimTree (sidebar file explorer)
+  - <Space>e — toggle the file tree sidebar
+
+  2. Telescope (fuzzy finder)
+  - <Space>ff — find files by name
+  - <Space>fg — search file contents (live grep)
+  - <Space>fb — browse open buffers
+  - <Space>fr — recent files
+
+
+  Jump between blocks:
+  - ]f / [f — next/previous function
+  - ]F / [F — next/previous function end
+  - ]c / [c — next/previous class
+
+  Select blocks (visual mode or with operators like d, y):
+  - af / if — around/inside function
+  - ac / ic — around/inside class
+  - ab / ib — around/inside block (if/for/while etc.)
