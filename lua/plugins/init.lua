@@ -350,9 +350,16 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
     ft = { 'markdown' },
     opts = {},
-    keys = {
-      { '<leader>mp', ':RenderMarkdown toggle<CR>', desc = 'Toggle markdown preview' },
-    },
+    config = function(_, opts)
+      require('render-markdown').setup(opts)
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'markdown',
+        callback = function(args)
+          vim.keymap.set('n', '<leader>mp', ':RenderMarkdown toggle<CR>',
+            { buffer = args.buf, silent = true, desc = 'Toggle markdown preview' })
+        end,
+      })
+    end,
   },
 
   -- ============================================================
