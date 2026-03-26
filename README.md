@@ -10,10 +10,15 @@ brew install neovim ripgrep git
 brew install --cask font-jetbrains-mono-nerd-font
 ```
 
-**2. Clone this repo as your Neovim config**
+**2. Clone this repo and symlink it as your Neovim config**
 ```sh
-git clone git@github.com:reza-rahman-rx/my-vim-setup.git ~/.config/nvim
+git clone git@github.com:reza-rahman-rx/my-vim-setup.git ~/personal/my-vim-setup
+ln -s ~/personal/my-vim-setup ~/.config/nvim
 ```
+
+> If you already have an existing config: `mv ~/.config/nvim ~/.config/nvim.bak` before running the symlink command.
+>
+> Using a symlink means any changes you make in the repo are immediately reflected in Neovim — no copying needed.
 
 **3. Open Neovim — plugins install automatically**
 ```sh
@@ -113,6 +118,7 @@ Sidebar file tree explorer.
 | Key | Action |
 |---|---|
 | `<leader>e` | Toggle file explorer |
+| `<leader>E` | Focus file explorer (jump to tree without closing it) |
 
 Inside nvim-tree:
 | Key | Action |
@@ -238,6 +244,17 @@ Add, change, or delete surrounding characters (quotes, brackets, tags, etc.).
 
 ---
 
+### Markdown
+
+#### render-markdown.nvim
+Renders markdown formatting directly inside Neovim — no browser needed. Activates automatically when opening `.md` files.
+
+| Key | Action |
+|---|---|
+| `<leader>mp` | Toggle markdown preview on/off |
+
+---
+
 ### Git
 
 #### gitsigns.nvim
@@ -280,6 +297,8 @@ The leader key is set to **Space**. All `<leader>` keybindings above use Space a
 | `Space + ff` | Find files |
 | `Space + fg` | Search text in project |
 | `Space + e` | Toggle file tree |
+| `Space + E` | Focus file tree |
+| `Space + mp` | Toggle markdown preview |
 | `gd` | Go to definition |
 | `K` | Hover docs |
 | `Space + ca` | Code action |
