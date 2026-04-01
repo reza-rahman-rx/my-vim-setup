@@ -37,3 +37,8 @@ vim.opt.clipboard = 'unnamedplus' -- Use system clipboard for all yank/paste
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
+-- Treesitter-based folding
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldenable = false -- don't auto-fold on open
+
