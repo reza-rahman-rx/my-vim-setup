@@ -274,6 +274,7 @@ return {
     build = ':TSUpdate',
     dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
     config = function()
+      vim.env.CC = 'cc' -- use system clang, not homebrew llvm
       require('nvim-treesitter').setup({
         ensure_installed = {
           'lua', 'javascript', 'typescript', 'tsx', 'python',

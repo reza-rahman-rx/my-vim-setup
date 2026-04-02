@@ -39,6 +39,6 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- Treesitter-based folding
 vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.foldenable = false -- don't auto-fold on open
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldlevel = 99 -- start with all folds open
 
