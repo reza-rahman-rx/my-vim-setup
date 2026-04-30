@@ -314,6 +314,21 @@ return {
     end,
   },
 
+  -- Indent guides
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      require('ibl').setup({
+        exclude = {
+          filetypes = { 'help', 'lazy', 'mason', 'NvimTree' },
+        },
+        scope = { enabled = false },
+      })
+    end,
+  },
+
   -- Auto-close brackets/quotes
   {
     'windwp/nvim-autopairs',
@@ -383,5 +398,24 @@ return {
   {
     'tpope/vim-fugitive',
     cmd = { 'Git', 'Gvdiffsplit', 'Glog' },
+  },
+
+  -- Merge conflict resolution
+  {
+    'akinsho/git-conflict.nvim',
+    version = '*',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      require('git-conflict').setup({
+        default_mappings = true,
+        default_commands = true,
+        disable_diagnostics = false,
+        list_opener = 'copen',
+        highlights = {
+          incoming = 'DiffAdd',
+          current = 'DiffText',
+        },
+      })
+    end,
   },
 }

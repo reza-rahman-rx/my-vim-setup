@@ -193,6 +193,9 @@ Modern, AST-based syntax highlighting. Far more accurate than regex-based highli
 
 Pre-installed parsers: lua, javascript, typescript, tsx, python, json, html, css, markdown, bash, vim, vimdoc.
 
+#### indent-blankline.nvim
+Shows vertical indent guides so nesting levels are visible at a glance.
+
 #### nvim-treesitter-textobjects (code navigation & selection)
 Jump between and select functions, classes, and blocks using treesitter's understanding of code structure.
 
