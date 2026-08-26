@@ -154,7 +154,7 @@ return {
     dependencies = { 'williamboman/mason.nvim', 'neovim/nvim-lspconfig' },
     config = function()
       require('mason-lspconfig').setup({
-        ensure_installed = { 'ts_ls', 'lua_ls', 'pyright' },
+        ensure_installed = { 'ts_ls', 'lua_ls', 'pyright', 'gopls' },
         automatic_installation = true,
       })
     end,
@@ -186,7 +186,7 @@ return {
       })
 
       -- Setup servers using vim.lsp.config (Nvim 0.11+ API)
-      local servers = { 'ts_ls', 'pyright' }
+      local servers = { 'ts_ls', 'pyright', 'gopls' }
       for _, server in ipairs(servers) do
         vim.lsp.config(server, {
           capabilities = capabilities,
@@ -204,7 +204,7 @@ return {
         },
       })
 
-      vim.lsp.enable({ 'ts_ls', 'pyright', 'lua_ls' })
+      vim.lsp.enable({ 'ts_ls', 'pyright', 'lua_ls', 'gopls' })
     end,
   },
 
@@ -231,7 +231,7 @@ return {
         mapping = cmp.mapping.preset.insert({
           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
           ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<C-Space>'] = cmp.mapping.complete(),
+          ['<C-n>'] = cmp.mapping.complete(),
           ['<C-e>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm({ select = true }),
           ['<Tab>'] = cmp.mapping(function(fallback)
@@ -277,7 +277,7 @@ return {
       vim.env.CC = 'cc' -- use system clang, not homebrew llvm
       require('nvim-treesitter').setup({
         ensure_installed = {
-          'lua', 'javascript', 'typescript', 'tsx', 'python',
+          'lua', 'javascript', 'typescript', 'tsx', 'python', 'go',
           'json', 'html', 'css', 'markdown', 'bash', 'vim', 'vimdoc',
         },
         highlight = { enable = true },
