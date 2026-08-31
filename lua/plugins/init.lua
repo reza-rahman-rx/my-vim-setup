@@ -99,6 +99,7 @@ return {
       require('nvim-tree').setup({
         view = { width = 30 },
         filters = { dotfiles = false, git_ignored = false },
+        update_focused_file = { enable = true },
       })
       vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true, desc = 'Toggle file explorer' })
       vim.keymap.set('n', '<leader>E', ':NvimTreeFocus<CR>', { silent = true, desc = 'Focus file explorer' })
